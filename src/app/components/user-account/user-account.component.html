@@ -1,0 +1,21 @@
+<div class="card-list" *ngFor="let account of accounts">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Tipo de cuenta {{account.account_type}} </mat-card-title>
+            <mat-card-subtitle>Saldo: ${{account.account_amount}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-button>Depositar</button>
+            <button mat-button>Retirar</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Depositar</mat-label>
+            <input matInput placeholder="Ex. 100000" name="deposit">
+        </mat-form-field>
+        <button mat-button (click)='deposit()'>Depositar</button>
+    </div>
+</div>

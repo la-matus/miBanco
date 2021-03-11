@@ -1,0 +1,41 @@
+<div class="user-content">
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput [formControl]="nameFormControl" placeholder="ex. Laura Matus" [(ngModel)]="user.name">
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+                Nombre es <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Apellidos</mat-label>
+            <input matInput placeholder="Ex. matus rojas" [(ngModel)]="user.last_name" name="lastName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Rut</mat-label>
+            <input type="text" matInput [formControl]="rutFormControl" placeholder="Ex. 99999999-9" [(ngModel)]="user.rut">
+            <mat-error *ngIf="rutFormControl.hasError('required')">
+                Rut es <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" [(ngModel)]="user.email">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Por favor, ingrese un email valido
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email es <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput [formControl]="passwordFormControl" placeholder="" [(ngModel)]="user.user_password">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Paasword es <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <button mat-stroked-button color="primary" (click)="saveUser()"> GUARDAR </button>
+    </form>
+</div>

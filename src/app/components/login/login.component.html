@@ -1,0 +1,21 @@
+<div class="card-list">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Rut</mat-label>
+            <input (keyup)="chkRut($event)" [(ngModel)]="user.rut" matInput placeholder="Ex. 99999999-1" name="rut">
+        </mat-form-field>
+        <span>{{rutStatus}}</span>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input [(ngModel)]="user.user_password" type="password" matInput placeholder="" name="pass">
+        </mat-form-field>
+        <span *ngIf="accountInvalidated">Contraseña incorrecta</span>
+        <br>
+        <button mat-stroked-button color="primary" (click)="validateUser()">Ingresar</button>
+        <br>
+        <div>
+            <a routerLink="/dashboard/add">Agregar usuario</a>
+        </div>
+    </form>
+</div>
