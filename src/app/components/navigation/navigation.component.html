@@ -1,17 +1,15 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button routerLink="/account" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>Mi Mini Banco</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-    <nav>
-        <a routerLink="/dashboard">Transferir</a>
-        <a routerLink="/dashboard/account">Cuenta</a>
-    </nav>
+    <div>
+        <a mat-button routerLink="/dashboard"> Transferir </a>
+        <button mat-button [matMenuTriggerFor]="menu">Cuenta</button>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="/account"> Estado Cuenta </a>
+            <a mat-menu-item routerLink="/login"> Cerrar Sesion </a>
+        </mat-menu>
+    </div>
 </mat-toolbar>

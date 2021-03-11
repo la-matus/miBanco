@@ -2,6 +2,11 @@
     min-width: 250px;
     float: left;
     margin: 20px;
+    height: min-content;
+}
+
+.details-account {
+    display: flex;
 }
 
 .example-header-image {
@@ -10,18 +15,39 @@
 }
 
 .card-list {
-    width: 1000px;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
 }
 
 .mat-form-field+.mat-form-field {
     margin-left: 8px;
 }
 
+.container-transaccion {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-transaccion>* {
+    width: 600px
+}
+
+table {
+    width: 100%;
+}
+
 @media only screen and (max-width: 1040px) {
-    .card-list {
+    .container {
         width: 660px;
+    }
+    .details-account {
+        display: block;
     }
 }

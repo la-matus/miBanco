@@ -15,8 +15,8 @@ export class AccountsService {
     return this.http.get(`${this.API_URI}/account`)
   }
 
-  findAccount(id: number){
-    return this.http.get(`${this.API_URI}/account/${id}`)
+  findAccount(id_account: number){
+    return this.http.get(`${this.API_URI}/account/${id_account}`)
   }
 
   deleteAccount(id: number){

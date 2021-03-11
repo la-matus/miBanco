@@ -13,11 +13,19 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule} from '@angular/material/sort';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 import {UsersService} from './services/users/users.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 import { LoginComponent } from './components/login/login.component';
+import { PaginatePipe } from './pipes/paginate.pipe';
+import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +33,10 @@ import { LoginComponent } from './components/login/login.component';
     UserFormComponent,
     DashboardComponent,
     UserAccountComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    PaginatePipe,
+    ModalComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,6 +49,11 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     MatCardModule,
     MatInputModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatMenuModule
   ],
   exports: [MatToolbarModule, MatIconModule, MatButtonModule],
   providers: [UsersService],
